@@ -2,7 +2,7 @@ name: Auto merge to develop
 on:
   push:
     branches:
-      - '*release*'
+      - 'release/GitgubAction'
 
 jobs:
   merge:
@@ -13,5 +13,5 @@ jobs:
     - name: Merge and Push
       run: |
         git checkout develop
-        git merge --no-ff ${GITHUB_REF#refs/heads/}
+        git merge --no-ff 'release/GitgubAction'
         git push origin develop
