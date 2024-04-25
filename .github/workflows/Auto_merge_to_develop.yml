@@ -1,0 +1,17 @@
+name: Auto merge to develop
+on:
+  push:
+    branches:
+      - '*release*'
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Merge and Push
+      run: |
+        git checkout develop
+        git merge --no-ff ${GITHUB_REF#refs/heads/}
+        git push origin develop
