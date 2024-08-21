@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Hello")
+        print("develop")
+        print("hello Git3")
     }
 
 
